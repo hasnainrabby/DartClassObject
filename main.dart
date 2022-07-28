@@ -1,7 +1,9 @@
 //Declaration Class
 
 class Car{                                                                   // Class name that is declare by user.
+  //Instance variable/ Member variable
   late String carName;
+  late String newCarName;
   late String brandName;
   late String color;
   late int model;
@@ -14,12 +16,10 @@ class Car{                                                                   // 
 
   // this = keyword, means this object/class.
   //Named Constructor
-  Car.newversioncar()
-  {
-    carName = "Jaguar Jeep";
-    model = 2345;
- }
+  Car.newversionCar(this.carName,this.model);
 
+  String get getName => newCarName;                                  //getter
+  set setName(String value) => newCarName = value;          //setter
   //methods
  void carStart()
   {
@@ -35,13 +35,14 @@ class Car{                                                                   // 
 }
 
 main(){
-
-
   var car = new Car("Sidan","BMW",135480);                                              //creating actual object of type Car.
 
-  var jeep = new Car.newversioncar();                            //Using Named Constructor.
+  var jeep = new Car.newversionCar("Jaguar Jeep",2453);                            //Using Named Constructor.
   print(jeep.carName);
   print(jeep.model);
+
+  car.setName = "Prado";
+  print(car.getName);
 
 
   /* car.carName = "Sidan";
